@@ -79,7 +79,7 @@ nav a:hover{border-color:var(--cr);}
 .prods-wrap{position:relative;}
 .prods-scroll{display:flex;gap:16px;overflow-x:auto;scroll-behavior:smooth;scrollbar-width:none;padding-bottom:4px;}
 .prods-scroll::-webkit-scrollbar{display:none;}
-.prod-card{flex:0 0 210px;width:210px;cursor:pointer;}
+.prod-card{flex:0 0 auto;width:100%;cursor:pointer;}
 .prod-imgs{position:relative;aspect-ratio:1;background:var(--lg);overflow:hidden;margin-bottom:12px;}
 .prod-imgs img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .4s;}
 .prod-imgs img:first-child{opacity:1;z-index:1;}
@@ -162,8 +162,7 @@ footer{background:var(--bd);color:var(--cr);padding:55px 20px 0;}
 .pg-hdr-ttl{font-family:var(--fd);font-size:clamp(36px,6vw,64px);font-weight:300;letter-spacing:3px;}
 .pg-hdr-sub{font-size:13px;opacity:.7;margin-top:8px;}
 /* CATEGORY PAGE */
-.cat-pg-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:1200px;margin:0 auto;padding:16px;}
-/* PRODUCT PAGE */
+.cat-pg-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:100%;margin:0;padding:12px;overflow:hidden;}/* PRODUCT PAGE */
 .prod-pg{max-width:1100px;margin:0 auto;padding:50px 20px;display:grid;grid-template-columns:1fr 1fr;gap:60px;}
 .prod-main{width:100%;aspect-ratio:1;object-fit:cover;background:var(--lg);cursor:zoom-in;}
 .prod-main-ph{width:100%;aspect-ratio:1;background:var(--lg);display:flex;align-items:center;justify-content:center;font-size:72px;}
@@ -346,7 +345,7 @@ footer{background:var(--bd);color:var(--cr);padding:55px 20px 0;}
       <a class="soc-btn" id="treeTiktokIcon" href="https://tiktok.com" target="_blank">🎵</a>
       <a class="soc-btn" id="treeWaIcon" href="https://wa.me" target="_blank">💬</a>
     </div>
-    <div class="tree-foot">© 2025 Skin Side · All rights reserved</div>
+    <div class="tree-foot">© 2026 Skin Side · All rights reserved</div>
   </div>
 </div>
 
