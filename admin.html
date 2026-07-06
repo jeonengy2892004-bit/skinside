@@ -1300,6 +1300,7 @@ document.getElementById('changePwdBtn').addEventListener('click',function(){
 const panelNames={dashboard:'Dashboard',orders:'Orders',products:'Products',categories:'Categories',offers:'Offers & Deals',reviews:'Customer Reviews',homepage:'Homepage',treelink:'Tree Link Page',settings:'Settings'};
 
 function goPanel(name){
+  document.getElementById('sidebar').classList.remove('open');
   document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.sb-item').forEach(b=>b.classList.remove('active'));
   const panel=document.getElementById('panel-'+name);

@@ -257,6 +257,9 @@ footer{background:var(--bd);color:var(--cr);padding:55px 20px 0;}
 .scr-btn.left{left:-18px;}.scr-btn.right{right:-18px;}
 @media(max-width:768px){nav{display:none;}.prod-pg{grid-template-columns:1fr;gap:30px;}.chk-inner{grid-template-columns:1fr;}.foot-inner{grid-template-columns:1fr 1fr;}.foot-inner>div:first-child{grid-column:1/-1;}.scr-btn{display:none;}.fg-row{grid-template-columns:1fr;}.burger{display:flex;}}
 @media(min-width:769px){.burger{display:none;}}
+
+@keyframes popIn{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
+
 </style>
 </head>
 <body>
@@ -334,11 +337,11 @@ footer{background:var(--bd);color:var(--cr);padding:55px 20px 0;}
       <div class="tree-tag" id="treeTaglineText">Your Skin, Your Story</div>
     </div>
     <div class="tree-links">
-      <button class="tree-btn featured" onclick="goPage('home')">🛍️ Shop Now — Skin Side</button>
-      <button class="tree-btn" id="treeInstaBtn">📸 Follow on Instagram</button>
-      <button class="tree-btn" id="treeTiktokBtn">🎵 Follow on TikTok</button>
-      <button class="tree-btn" onclick="goPage('offers')">🎁 Offers & Deals</button>
-      <button class="tree-btn" onclick="goPage('contact')">💬 Contact Us</button>
+      <button class="tree-btn featured" onclick="goPage('home')"> Shop Now — Skin Side</button>
+      <button class="tree-btn" id="treeInstaBtn">Instagram</button>
+      <button class="tree-btn" id="treeTiktokBtn"> TikTok</button>
+      <button class="tree-btn" onclick="goPage('offers')">Offers & Deals</button>
+      <button class="tree-btn" onclick="goPage('contact')">Contact Us</button>
     </div>
     <div class="tree-soc">
       <a class="soc-btn" id="treeInstaIcon" href="https://instagram.com" target="_blank">📸</a>
@@ -507,11 +510,18 @@ footer{background:var(--bd);color:var(--cr);padding:55px 20px 0;}
 <!-- ORDER CONFIRM -->
 <div class="page" id="page-orderconfirm">
   <div class="ord-conf">
-    <div class="ord-conf-ico">✅</div>
-    <h1 class="ord-conf-ttl">Order Placed!</h1>
+    <div style="font-size:70px;margin-bottom:20px;animation:popIn .5s ease">✅</div>
+    <h1 class="ord-conf-ttl">Order Placed Successfully!</h1>
     <div class="ord-num" id="ordNum">ORDER #SK-000000</div>
-    <p style="font-size:14px;color:var(--gr);line-height:1.8;max-width:440px">Thank you! We'll contact you soon to confirm. Payment is cash on delivery. Delivery within 3–5 business days.</p>
-    <div style="margin-top:30px"><button class="btn btn-bu" onclick="goPage('home')">CONTINUE SHOPPING</button></div>
+    <div style="background:var(--wh);border:.5px solid var(--lg);padding:28px;max-width:420px;width:100%;margin:20px auto;text-align:left">
+      <p style="font-size:13px;color:var(--gr);line-height:1.9;margin-bottom:14px">🎉 Thank you for your order! Here's what happens next:</p>
+      <p style="font-size:13px;color:var(--bk);margin-bottom:8px">📞 We'll call you within <strong>24 hours</strong> to confirm your order</p>
+      <p style="font-size:13px;color:var(--bk);margin-bottom:8px">🚚 Delivery within <strong>3–5 business days</strong></p>
+      <p style="font-size:13px;color:var(--bk);margin-bottom:0">💳 Payment is <strong>Cash on Delivery</strong> — no card needed</p>
+    </div>
+    <div style="margin-top:24px;display:flex;flex-direction:column;align-items:center;gap:12px">
+      <button class="btn btn-bu" style="min-width:220px" onclick="goPage('home')">CONTINUE SHOPPING</button>
+    </div>
   </div>
 </div>
 
