@@ -160,7 +160,11 @@ tr:hover td{background:#FAFAF8;}
 /* SETTINGS GRID */
 .sg{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
 @media(max-width:900px){.sg{grid-template-columns:1fr;}.fg-row,.fg-row3{grid-template-columns:1fr;}}
-@media(max-width:768px){.sb{transform:translateX(-100%);transition:transform .3s;}.sb.open{transform:translateX(0);}.main{margin-left:0;}}
+@media(max-width:768px){
+  .sb{transform:translateX(-100%);transition:transform .3s;position:fixed;}
+  .sb.open{transform:translateX(0);}
+  .main{margin-left:0;}
+}
 </style>
 </head>
 <body>
@@ -210,7 +214,8 @@ tr:hover td{background:#FAFAF8;}
 <!-- MAIN -->
 <div class="main">
   <div class="topbar">
-    <div class="tb-title" id="tbTitle">Dashboard</div>
+  <button onclick="document.getElementById('sidebar').classList.toggle('open')" style="background:none;border:none;cursor:pointer;font-size:22px;margin-right:14px;">☰</button>
+  <div class="tb-title" id="tbTitle">Dashboard</div>
     <button class="tb-btn" onclick="window.open('index.html','_blank')">🌐 View Website</button>
   </div>
   <div class="content">
