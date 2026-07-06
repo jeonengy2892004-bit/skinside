@@ -29,7 +29,7 @@ nav a:hover{border-color:var(--cr);}
 .mob-menu{position:fixed;top:0;left:-100%;width:85%;max-width:320px;height:100vh;background:var(--cr);z-index:2000;transition:left .35s;padding:60px 30px 30px;overflow-y:auto;}
 .mob-menu.open{left:0;}
 .mob-close{position:absolute;top:20px;right:20px;background:none;border:none;font-size:24px;cursor:pointer;color:var(--bu);}
-.mob-menu nav{display:flex;flex-direction:column;gap:0;}
+.mob-menu nav{flex-direction:column;gap:0;}
 .mob-menu nav a{color:var(--bk);font-size:14px;padding:14px 0;border-bottom:.5px solid var(--lg);width:100%;display:block;}
 /* HERO */
 .hero{position:relative;height:85vh;min-height:500px;overflow:hidden;background:var(--bd);}
@@ -107,11 +107,11 @@ nav a:hover{border-color:var(--cr);}
 .rev-img-ph{width:100%;aspect-ratio:4/3;background:var(--lg);display:flex;align-items:center;justify-content:center;font-size:32px;color:var(--gr);margin-bottom:12px;}
 /* OFFERS */
 .off-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
-.off-card{background:var(--bu);color:var(--cr);padding:20px;position:relative;overflow:hidden;cursor:pointer;transition:background .25s;}
+.off-card{background:var(--bu);color:var(--cr);padding:35px 30px;position:relative;overflow:hidden;cursor:pointer;transition:background .25s;}
 .off-card:hover{background:var(--bd);}
 .off-lbl{font-size:10px;letter-spacing:3px;text-transform:uppercase;opacity:.7;margin-bottom:12px;}
-.off-ttl{font-family:var(--fd);font-size:22px;font-weight:300;line-height:1.2;margin-bottom:12px;}
-.off-desc{font-size:12px;opacity:.8;margin-bottom:12px;line-height:1.5;}
+.off-ttl{font-family:var(--fd);font-size:32px;font-weight:300;line-height:1.2;margin-bottom:12px;}
+.off-desc{font-size:13px;opacity:.8;margin-bottom:22px;line-height:1.6;}
 .off-cta{font-size:10px;letter-spacing:2px;text-transform:uppercase;border-bottom:1px solid var(--cr);display:inline-block;padding-bottom:2px;font-weight:500;}
 /* FOOTER */
 footer{background:var(--bd);color:var(--cr);padding:55px 20px 0;}
@@ -162,7 +162,8 @@ footer{background:var(--bd);color:var(--cr);padding:55px 20px 0;}
 .pg-hdr-ttl{font-family:var(--fd);font-size:clamp(36px,6vw,64px);font-weight:300;letter-spacing:3px;}
 .pg-hdr-sub{font-size:13px;opacity:.7;margin-top:8px;}
 /* CATEGORY PAGE */
-.cat-pg-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:100%;margin:0;padding:12px;overflow:hidden;}/* PRODUCT PAGE */
+.cat-pg-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:24px;max-width:1200px;margin:0 auto;padding:50px 20px;}
+/* PRODUCT PAGE */
 .prod-pg{max-width:1100px;margin:0 auto;padding:50px 20px;display:grid;grid-template-columns:1fr 1fr;gap:60px;}
 .prod-main{width:100%;aspect-ratio:1;object-fit:cover;background:var(--lg);cursor:zoom-in;}
 .prod-main-ph{width:100%;aspect-ratio:1;background:var(--lg);display:flex;align-items:center;justify-content:center;font-size:72px;}
@@ -257,9 +258,6 @@ footer{background:var(--bd);color:var(--cr);padding:55px 20px 0;}
 .scr-btn.left{left:-18px;}.scr-btn.right{right:-18px;}
 @media(max-width:768px){nav{display:none;}.prod-pg{grid-template-columns:1fr;gap:30px;}.chk-inner{grid-template-columns:1fr;}.foot-inner{grid-template-columns:1fr 1fr;}.foot-inner>div:first-child{grid-column:1/-1;}.scr-btn{display:none;}.fg-row{grid-template-columns:1fr;}.burger{display:flex;}}
 @media(min-width:769px){.burger{display:none;}}
-
-@keyframes popIn{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
-
 </style>
 </head>
 <body>
@@ -273,7 +271,7 @@ footer{background:var(--bd);color:var(--cr);padding:55px 20px 0;}
 <div class="ann-bar">
   <div class="ann-slide active" id="annSlide0">✦ FREE SHIPPING ON ORDERS OVER 500 EGP ✦</div>
   <div class="ann-slide" id="annSlide1">✦ CASH ON DELIVERY AVAILABLE NATIONWIDE ✦</div>
-  <div class="ann-slide" id="annSlide2">✦ BUY 1 GET 1 FREE - SHOP OUR CURRENT OFFERS ✦</div>
+  <div class="ann-slide" id="annSlide2">✦ BUY 1 GET 1 FREE — SHOP OUR CURRENT OFFERS ✦</div>
 </div>
 
 <div class="mob-ov" id="mobOv" onclick="closeMob()"></div>
@@ -337,18 +335,18 @@ footer{background:var(--bd);color:var(--cr);padding:55px 20px 0;}
       <div class="tree-tag" id="treeTaglineText">Your Skin, Your Story</div>
     </div>
     <div class="tree-links">
-      <button class="tree-btn featured" onclick="goPage('home')"> Shop Now — Skin Side</button>
-      <button class="tree-btn" id="treeInstaBtn">Instagram</button>
-      <button class="tree-btn" id="treeTiktokBtn"> TikTok</button>
-      <button class="tree-btn" onclick="goPage('offers')">Offers & Deals</button>
-      <button class="tree-btn" onclick="goPage('contact')">Contact Us</button>
+      <button class="tree-btn featured" onclick="goPage('home')">🛍️ Shop Now — Skin Side</button>
+      <button class="tree-btn" id="treeInstaBtn">📸 Follow on Instagram</button>
+      <button class="tree-btn" id="treeTiktokBtn">🎵 Follow on TikTok</button>
+      <button class="tree-btn" onclick="goPage('offers')">🎁 Offers & Deals</button>
+      <button class="tree-btn" onclick="goPage('contact')">💬 Contact Us</button>
     </div>
     <div class="tree-soc">
       <a class="soc-btn" id="treeInstaIcon" href="https://instagram.com" target="_blank">📸</a>
       <a class="soc-btn" id="treeTiktokIcon" href="https://tiktok.com" target="_blank">🎵</a>
       <a class="soc-btn" id="treeWaIcon" href="https://wa.me" target="_blank">💬</a>
     </div>
-    <div class="tree-foot">© 2026 Skin Side · All rights reserved</div>
+    <div class="tree-foot">© 2025 Skin Side · All rights reserved</div>
   </div>
 </div>
 
@@ -380,7 +378,7 @@ footer{background:var(--bd);color:var(--cr);padding:55px 20px 0;}
       <button class="hero-dot" onclick="goSlide(1)"></button>
     </div>
   </section>
-  
+
   <section class="section">
     <div class="sec-inner">
       <span class="sec-eye">Explore</span><h2 class="sec-ttl">Collections</h2><p class="sec-sub">Shop by category</p>
@@ -410,21 +408,6 @@ footer{background:var(--bd);color:var(--cr);padding:55px 20px 0;}
       </div>
     </div>
   </section>
-
-
-
-<div class="feat-bar">
-    <div class="feat-inner">
-      <div class="feat-item"><span class="feat-ico">🚚</span><span class="feat-lbl">Free Delivery</span><span class="feat-desc">Orders over 500 EGP</span></div>
-      <div class="feat-item"><span class="feat-ico">💳</span><span class="feat-lbl">Cash on Delivery</span><span class="feat-desc">Available nationwide</span></div>
-      <div class="feat-item"><span class="feat-ico">🌿</span><span class="feat-lbl">Clean Formulas</span><span class="feat-desc">Dermatologist tested</span></div>
-      <div class="feat-item"><span class="feat-ico">✨</span><span class="feat-lbl">100% Authentic</span><span class="feat-desc">Genuine products</span></div>
-    </div>
-  </div>
-
-
-
-
 </div>
 
 <!-- CATEGORY PAGE -->
@@ -510,18 +493,11 @@ footer{background:var(--bd);color:var(--cr);padding:55px 20px 0;}
 <!-- ORDER CONFIRM -->
 <div class="page" id="page-orderconfirm">
   <div class="ord-conf">
-    <div style="font-size:70px;margin-bottom:20px;animation:popIn .5s ease">✅</div>
-    <h1 class="ord-conf-ttl">Order Placed Successfully!</h1>
+    <div class="ord-conf-ico">✅</div>
+    <h1 class="ord-conf-ttl">Order Placed!</h1>
     <div class="ord-num" id="ordNum">ORDER #SK-000000</div>
-    <div style="background:var(--wh);border:.5px solid var(--lg);padding:28px;max-width:420px;width:100%;margin:20px auto;text-align:left">
-      <p style="font-size:13px;color:var(--gr);line-height:1.9;margin-bottom:14px">🎉 Thank you for your order! Here's what happens next:</p>
-      <p style="font-size:13px;color:var(--bk);margin-bottom:8px">📞 We'll call you within <strong>24 hours</strong> to confirm your order</p>
-      <p style="font-size:13px;color:var(--bk);margin-bottom:8px">🚚 Delivery within <strong>3–5 business days</strong></p>
-      <p style="font-size:13px;color:var(--bk);margin-bottom:0">💳 Payment is <strong>Cash on Delivery</strong> — no card needed</p>
-    </div>
-    <div style="margin-top:24px;display:flex;flex-direction:column;align-items:center;gap:12px">
-      <button class="btn btn-bu" style="min-width:220px" onclick="goPage('home')">CONTINUE SHOPPING</button>
-    </div>
+    <p style="font-size:14px;color:var(--gr);line-height:1.8;max-width:440px">Thank you! We'll contact you soon to confirm. Payment is cash on delivery. Delivery within 3–5 business days.</p>
+    <div style="margin-top:30px"><button class="btn btn-bu" onclick="goPage('home')">CONTINUE SHOPPING</button></div>
   </div>
 </div>
 
@@ -561,10 +537,14 @@ footer{background:var(--bd);color:var(--cr);padding:55px 20px 0;}
 </div>
 
 
-
-
-
-
+<div class="feat-bar">
+    <div class="feat-inner">
+      <div class="feat-item"><span class="feat-ico">🚚</span><span class="feat-lbl">Free Delivery</span><span class="feat-desc">Orders over 500 EGP</span></div>
+      <div class="feat-item"><span class="feat-ico">💳</span><span class="feat-lbl">Cash on Delivery</span><span class="feat-desc">Available nationwide</span></div>
+      <div class="feat-item"><span class="feat-ico">🌿</span><span class="feat-lbl">Clean Formulas</span><span class="feat-desc">Dermatologist tested</span></div>
+      <div class="feat-item"><span class="feat-ico">✨</span><span class="feat-lbl">100% Authentic</span><span class="feat-desc">Genuine products</span></div>
+    </div>
+  </div>
 
 <!-- FOOTER -->
 <footer>
@@ -579,13 +559,13 @@ footer{background:var(--bd);color:var(--cr);padding:55px 20px 0;}
       </div>
     </div>
     <div class="foot-col"><div class="foot-col-ttl">Shop</div><a onclick="showCat('all')">All Products</a><a onclick="goPage('offers')">Offers</a></div>
-    <div class="foot-col"><div class="foot-col-ttl">Help</div><a onclick="goPage('contact')">Contact Us</a><a onclick="goPage('about')">About</a></div>
+    <div class="foot-col"><div class="foot-col-ttl">Help</div><a onclick="goPage('contact')">Contact Us</a><a onclick="goPage('about')">About</a><a>Shipping Info</a><a>Returns</a></div>
     <div class="foot-col"><div class="foot-col-ttl">Follow</div><a id="footInstaIcon" href="https://instagram.com" target="_blank">Instagram</a><a id="footTiktokIcon" href="https://tiktok.com" target="_blank">TikTok</a><a id="footWaIcon" href="https://wa.me" target="_blank">WhatsApp</a></div>
   </div>
   <div class="foot-bot">
     <span class="foot-cod">💳 Cash on Delivery Available Nationwide</span>
-    <span class="foot-dev">Developed by @engy_mostaffa  /  @webgy_</span>
-    <span class="foot-copy">© 2026 Skin Side · All rights reserved</span>
+    <span class="foot-dev">Developed by @engy_mostafa</span>
+    <span class="foot-copy">© 2025 Skin Side · All rights reserved</span>
   </div>
 </footer>
 
@@ -597,13 +577,14 @@ import{getFirestore,collection,getDocs,addDoc,doc,getDoc,serverTimestamp,query,o
 // 🔧 FIREBASE CONFIG — ضعي بياناتك هنا
 // ============================================================
 const FB={
-  apiKey:"AIzaSyBoDt4ZwZ7Naa_b6IOYnKwF5FJBqoWxleU",
-  authDomain:"skinside-71dfe.firebaseapp.com",
-  projectId:"skinside-71dfe",
-  storageBucket:"skinside-71dfe.firebasestorage.app",
-  messagingSenderId:"139472822448",
-  appId:"1:139472822448:web:988fa109f7bee4981e5b75"
+  apiKey: "AIzaSyBoDt4ZwZ7Naa_b6IOYnKwF5FJBqoWxleU",
+  authDomain: "skinside-71dfe.firebaseapp.com",
+  projectId: "skinside-71dfe",
+  storageBucket: "skinside-71dfe.firebasestorage.app",
+  messagingSenderId: "139472822448",
+  appId: "1:139472822448:web:988fa109f7bee4981e5b75"
 };
+
 // ============================================================
 // 🔧 TELEGRAM — ضعي بياناتك هنا
 // ============================================================
@@ -748,34 +729,15 @@ function calcOffers(){
   return{items,offers,total:Math.max(0,sub-discount),discount,sub};
 }
 
-// ============================================================
-// PLACE ORDER
-// ============================================================
-window.placeOrder=async function(){
-  const fn=document.getElementById('chkFN').value.trim();
-  const ph=document.getElementById('chkPh').value.trim();
-  const gov=document.getElementById('chkGov').value;
-  const addr=document.getElementById('chkAddr').value.trim();
-  if(!fn||!ph||!gov||!addr){alert('Please fill in all required fields.');return;}
-  if(!window.cart.length){alert('Your cart is empty!');return;}
- const{items,offers,total}=window.calcOffersSync?window.calcOffersSync():{items:window.cart.map(i=>({...i,freeQty:0})),offers:[],total:window.cart.reduce((s,i)=>s+i.price*i.qty,0)};
-  const od={
-    customer:{name:`${fn} ${document.getElementById('chkLN').value.trim()}`,phone:ph,whatsapp:document.getElementById('chkWA').value.trim()||ph,governorate:gov,address:addr,notes:document.getElementById('chkNotes').value.trim()},
-    items:items.map(i=>({id:i.id,name:i.name,price:i.price,qty:i.qty,freeQty:i.freeQty||0})),
-    appliedOffers:offers,total,paymentMethod:'Cash on Delivery',status:'pending',
-    createdAt:serverTimestamp?serverTimestamp():new Date().toISOString()
-  };
-  let ordId='SK-'+Date.now();
-  try{if(db){const r=await addDoc(collection(db,'orders'),od);ordId='SK-'+r.id.slice(-6).toUpperCase();}}catch(e){console.warn('Order save error',e);}
-  if(TG_TOKEN&&TG_CHAT&&!TG_TOKEN.includes('YOUR')){
-    const msg=`🛍️ NEW ORDER — Skin Side\n\n📋 Order: ${ordId}\n👤 ${od.customer.name}\n📞 ${od.customer.phone}\n💬 WhatsApp: ${od.customer.whatsapp}\n📍 ${od.customer.governorate} — ${od.customer.address}\n\n🧴 Items:\n${od.items.map(i=>`• ${i.name} × ${i.qty}${i.freeQty?` (+${i.freeQty} FREE)`:''} = ${i.price*i.qty} EGP`).join('\n')}${offers.length?'\n\n🎁 Offers:\n'+offers.join('\n'):''}\n\n💰 Total: ${total} EGP (COD)${od.customer.notes?'\n📝 Notes: '+od.customer.notes:''}`;
-    fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_id:TG_CHAT,text:msg})}).catch(()=>{});
-  }
-  if(Notification.permission==='granted')new Notification('Skin Side — Order Confirmed! 🎉',{body:`Order ${ordId} placed! We'll contact you soon.`});
-  window.cart=[];updateCart();
-  document.getElementById('ordNum').textContent=`ORDER #${ordId}`;
-  goPage('orderconfirm');window.scrollTo(0,0);
-};
+
+
+// Expose Firebase vars to window so placeOrder can use them
+window._db=db;
+window._tgToken=TG_TOKEN;
+window._tgChat=TG_CHAT;
+window._fbAdd=addDoc;
+window._fbCol=collection;
+window._fbTS=serverTimestamp;
 </script>
 
 <script>
@@ -926,6 +888,49 @@ window.closeMob=function(){document.getElementById('mobMenu').classList.remove('
 window.reqNotif=function(){
   if('Notification'in window){Notification.requestPermission().then(p=>{if(p==='granted'){document.getElementById('notifBar').classList.add('hidden');new Notification('Skin Side',{body:"You'll receive order updates!"});}});}
   else document.getElementById('notifBar').classList.add('hidden');
+};
+
+
+// ============================================================
+// PLACE ORDER
+// ============================================================
+window.placeOrder=async function(){
+  const fn=document.getElementById('chkFN').value.trim();
+  const ph=document.getElementById('chkPh').value.trim();
+  const gov=document.getElementById('chkGov').value;
+  const addr=document.getElementById('chkAddr').value.trim();
+  if(!fn||!ph||!gov||!addr){alert('Please fill in all required fields.');return;}
+  if(!window.cart.length){alert('Your cart is empty!');return;}
+  const{items,offers,total}=window.calcOffersSync
+    ?window.calcOffersSync()
+    :{items:window.cart.map(i=>({...i,freeQty:0})),offers:[],total:window.cart.reduce((s,i)=>s+i.price*i.qty,0)};
+  const od={
+    customer:{name:`${fn} ${document.getElementById('chkLN').value.trim()}`,phone:ph,whatsapp:document.getElementById('chkWA').value.trim()||ph,governorate:gov,address:addr,notes:document.getElementById('chkNotes').value.trim()},
+    items:items.map(i=>({id:i.id,name:i.name,price:i.price,qty:i.qty,freeQty:i.freeQty||0})),
+    appliedOffers:offers,total,paymentMethod:'Cash on Delivery',status:'pending',
+    createdAt:new Date().toISOString()
+  };
+  let ordId='SK-'+Date.now();
+  try{
+    const db=window._db;
+    const addDoc=window._fbAdd;
+    const collection=window._fbCol;
+    const serverTimestamp=window._fbTS;
+    if(db&&addDoc&&collection){
+      const r=await addDoc(collection(db,'orders'),{...od,createdAt:serverTimestamp?serverTimestamp():new Date().toISOString()});
+      ordId='SK-'+r.id.slice(-6).toUpperCase();
+    }
+  }catch(e){console.warn('Order save error',e);}
+  const TG_TOKEN=window._tgToken||'';
+  const TG_CHAT=window._tgChat||'';
+  if(TG_TOKEN&&TG_CHAT&&!TG_TOKEN.includes('YOUR')){
+    const msg=`🛍️ NEW ORDER — Skin Side\n\n📋 Order: ${ordId}\n👤 ${od.customer.name}\n📞 ${od.customer.phone}\n💬 WhatsApp: ${od.customer.whatsapp}\n📍 ${od.customer.governorate} — ${od.customer.address}\n\n🧴 Items:\n${od.items.map(i=>`• ${i.name} × ${i.qty}${i.freeQty?` (+${i.freeQty} FREE)`:''} = ${i.price*i.qty} EGP`).join('\n')}${offers.length?'\n\n🎁 Offers:\n'+offers.join('\n'):''}\n\n💰 Total: ${total} EGP (COD)${od.customer.notes?'\n📝 Notes: '+od.customer.notes:''}`;
+    fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_id:TG_CHAT,text:msg})}).catch(()=>{});
+  }
+  if(Notification.permission==='granted')new Notification('Skin Side — Order Confirmed! 🎉',{body:`Order ${ordId} placed! We'll contact you soon.`});
+  window.cart=[];updateCart();
+  document.getElementById('ordNum').textContent=`ORDER #${ordId}`;
+  goPage('orderconfirm');window.scrollTo(0,0);
 };
 
 if(window.location.hash==='#links')goPage('treelink');
