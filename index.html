@@ -273,7 +273,7 @@ footer{background:var(--bd);color:var(--cr);padding:55px 20px 0;}
 <div class="ann-bar">
   <div class="ann-slide active" id="annSlide0">✦ FREE SHIPPING ON ORDERS OVER 500 EGP ✦</div>
   <div class="ann-slide" id="annSlide1">✦ CASH ON DELIVERY AVAILABLE NATIONWIDE ✦</div>
-  <div class="ann-slide" id="annSlide2">✦ BUY 1 GET 1 FREE — SHOP OUR CURRENT OFFERS ✦</div>
+  <div class="ann-slide" id="annSlide2">✦ BUY 1 GET 1 FREE - SHOP OUR CURRENT OFFERS ✦</div>
 </div>
 
 <div class="mob-ov" id="mobOv" onclick="closeMob()"></div>
@@ -758,7 +758,7 @@ window.placeOrder=async function(){
   const addr=document.getElementById('chkAddr').value.trim();
   if(!fn||!ph||!gov||!addr){alert('Please fill in all required fields.');return;}
   if(!window.cart.length){alert('Your cart is empty!');return;}
-  const{items,offers,total}=calcOffers();
+ const{items,offers,total}=window.calcOffersSync?window.calcOffersSync():{items:window.cart.map(i=>({...i,freeQty:0})),offers:[],total:window.cart.reduce((s,i)=>s+i.price*i.qty,0)};
   const od={
     customer:{name:`${fn} ${document.getElementById('chkLN').value.trim()}`,phone:ph,whatsapp:document.getElementById('chkWA').value.trim()||ph,governorate:gov,address:addr,notes:document.getElementById('chkNotes').value.trim()},
     items:items.map(i=>({id:i.id,name:i.name,price:i.price,qty:i.qty,freeQty:i.freeQty||0})),
