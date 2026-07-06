@@ -930,7 +930,7 @@ window.placeOrder=async function(){
   if(Notification.permission==='granted')new Notification('Skin Side — Order Confirmed! 🎉',{body:`Order ${ordId} placed! We'll contact you soon.`});
   window.cart=[];updateCart();
   document.getElementById('ordNum').textContent=`ORDER #${ordId}`;
-  goPage('orderconfirm');window.scrollTo(0,0);
+  setTimeout(()=>{goPage('orderconfirm');window.scrollTo(0,0);},100);
 };
 
 if(window.location.hash==='#links')goPage('treelink');
