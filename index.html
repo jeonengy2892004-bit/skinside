@@ -29,7 +29,7 @@ nav a:hover{border-color:var(--cr);}
 .mob-menu{position:fixed;top:0;left:-100%;width:85%;max-width:320px;height:100vh;background:var(--cr);z-index:2000;transition:left .35s;padding:60px 30px 30px;overflow-y:auto;}
 .mob-menu.open{left:0;}
 .mob-close{position:absolute;top:20px;right:20px;background:none;border:none;font-size:24px;cursor:pointer;color:var(--bu);}
-.mob-menu nav{flex-direction:column;gap:0;}
+.mob-menu nav{display:flex;flex-direction:column;gap:0;}
 .mob-menu nav a{color:var(--bk);font-size:14px;padding:14px 0;border-bottom:.5px solid var(--lg);width:100%;display:block;}
 /* HERO */
 .hero{position:relative;height:85vh;min-height:500px;overflow:hidden;background:var(--bd);}
@@ -107,11 +107,11 @@ nav a:hover{border-color:var(--cr);}
 .rev-img-ph{width:100%;aspect-ratio:4/3;background:var(--lg);display:flex;align-items:center;justify-content:center;font-size:32px;color:var(--gr);margin-bottom:12px;}
 /* OFFERS */
 .off-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
-.off-card{background:var(--bu);color:var(--cr);padding:35px 30px;position:relative;overflow:hidden;cursor:pointer;transition:background .25s;}
+.off-card{background:var(--bu);color:var(--cr);padding:20px;position:relative;overflow:hidden;cursor:pointer;transition:background .25s;}
 .off-card:hover{background:var(--bd);}
 .off-lbl{font-size:10px;letter-spacing:3px;text-transform:uppercase;opacity:.7;margin-bottom:12px;}
-.off-ttl{font-family:var(--fd);font-size:32px;font-weight:300;line-height:1.2;margin-bottom:12px;}
-.off-desc{font-size:13px;opacity:.8;margin-bottom:22px;line-height:1.6;}
+.off-ttl{font-family:var(--fd);font-size:22px;font-weight:300;line-height:1.2;margin-bottom:12px;}
+.off-desc{font-size:12px;opacity:.8;margin-bottom:12px;line-height:1.5;}
 .off-cta{font-size:10px;letter-spacing:2px;text-transform:uppercase;border-bottom:1px solid var(--cr);display:inline-block;padding-bottom:2px;font-weight:500;}
 /* FOOTER */
 footer{background:var(--bd);color:var(--cr);padding:55px 20px 0;}
@@ -162,7 +162,7 @@ footer{background:var(--bd);color:var(--cr);padding:55px 20px 0;}
 .pg-hdr-ttl{font-family:var(--fd);font-size:clamp(36px,6vw,64px);font-weight:300;letter-spacing:3px;}
 .pg-hdr-sub{font-size:13px;opacity:.7;margin-top:8px;}
 /* CATEGORY PAGE */
-.cat-pg-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:24px;max-width:1200px;margin:0 auto;padding:50px 20px;}
+.cat-pg-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px;max-width:1200px;margin:0 auto;padding:20px;}
 /* PRODUCT PAGE */
 .prod-pg{max-width:1100px;margin:0 auto;padding:50px 20px;display:grid;grid-template-columns:1fr 1fr;gap:60px;}
 .prod-main{width:100%;aspect-ratio:1;object-fit:cover;background:var(--lg);cursor:zoom-in;}
@@ -378,14 +378,7 @@ footer{background:var(--bd);color:var(--cr);padding:55px 20px 0;}
       <button class="hero-dot" onclick="goSlide(1)"></button>
     </div>
   </section>
-  <div class="feat-bar">
-    <div class="feat-inner">
-      <div class="feat-item"><span class="feat-ico">🚚</span><span class="feat-lbl">Free Delivery</span><span class="feat-desc">Orders over 500 EGP</span></div>
-      <div class="feat-item"><span class="feat-ico">💳</span><span class="feat-lbl">Cash on Delivery</span><span class="feat-desc">Available nationwide</span></div>
-      <div class="feat-item"><span class="feat-ico">🌿</span><span class="feat-lbl">Clean Formulas</span><span class="feat-desc">Dermatologist tested</span></div>
-      <div class="feat-item"><span class="feat-ico">✨</span><span class="feat-lbl">100% Authentic</span><span class="feat-desc">Genuine products</span></div>
-    </div>
-  </div>
+  
   <section class="section">
     <div class="sec-inner">
       <span class="sec-eye">Explore</span><h2 class="sec-ttl">Collections</h2><p class="sec-sub">Shop by category</p>
@@ -415,6 +408,21 @@ footer{background:var(--bd);color:var(--cr);padding:55px 20px 0;}
       </div>
     </div>
   </section>
+
+
+
+<div class="feat-bar">
+    <div class="feat-inner">
+      <div class="feat-item"><span class="feat-ico">🚚</span><span class="feat-lbl">Free Delivery</span><span class="feat-desc">Orders over 500 EGP</span></div>
+      <div class="feat-item"><span class="feat-ico">💳</span><span class="feat-lbl">Cash on Delivery</span><span class="feat-desc">Available nationwide</span></div>
+      <div class="feat-item"><span class="feat-ico">🌿</span><span class="feat-lbl">Clean Formulas</span><span class="feat-desc">Dermatologist tested</span></div>
+      <div class="feat-item"><span class="feat-ico">✨</span><span class="feat-lbl">100% Authentic</span><span class="feat-desc">Genuine products</span></div>
+    </div>
+  </div>
+
+
+
+
 </div>
 
 <!-- CATEGORY PAGE -->
@@ -543,6 +551,12 @@ footer{background:var(--bd);color:var(--cr);padding:55px 20px 0;}
   </div>
 </div>
 
+
+
+
+
+
+
 <!-- FOOTER -->
 <footer>
   <div class="foot-inner">
@@ -556,13 +570,13 @@ footer{background:var(--bd);color:var(--cr);padding:55px 20px 0;}
       </div>
     </div>
     <div class="foot-col"><div class="foot-col-ttl">Shop</div><a onclick="showCat('all')">All Products</a><a onclick="goPage('offers')">Offers</a></div>
-    <div class="foot-col"><div class="foot-col-ttl">Help</div><a onclick="goPage('contact')">Contact Us</a><a onclick="goPage('about')">About</a><a>Shipping Info</a><a>Returns</a></div>
+    <div class="foot-col"><div class="foot-col-ttl">Help</div><a onclick="goPage('contact')">Contact Us</a><a onclick="goPage('about')">About</a>></div>
     <div class="foot-col"><div class="foot-col-ttl">Follow</div><a id="footInstaIcon" href="https://instagram.com" target="_blank">Instagram</a><a id="footTiktokIcon" href="https://tiktok.com" target="_blank">TikTok</a><a id="footWaIcon" href="https://wa.me" target="_blank">WhatsApp</a></div>
   </div>
   <div class="foot-bot">
     <span class="foot-cod">💳 Cash on Delivery Available Nationwide</span>
-    <span class="foot-dev">Developed by @engy_mostafa</span>
-    <span class="foot-copy">© 2025 Skin Side · All rights reserved</span>
+    <span class="foot-dev">Developed by @engy_mostaffa  /  @webgy_</span>
+    <span class="foot-copy">© 2026 Skin Side · All rights reserved</span>
   </div>
 </footer>
 
@@ -584,8 +598,8 @@ const FB={
 // ============================================================
 // 🔧 TELEGRAM — ضعي بياناتك هنا
 // ============================================================
-const TG_TOKEN='YOUR_BOT_TOKEN';
-const TG_CHAT='YOUR_CHAT_ID';
+const TG_TOKEN='8861468855:AAGiZD_bbFF6eO5W4sS75F1G-lSPuLl7GTM';
+const TG_CHAT='8131635425';
 
 let db;
 try{
