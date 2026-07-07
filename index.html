@@ -271,7 +271,7 @@ footer{background:var(--bd);color:var(--cr);padding:55px 20px 0;}
 <div class="ann-bar">
   <div class="ann-slide active" id="annSlide0">✦ FREE SHIPPING ON ORDERS OVER 500 EGP ✦</div>
   <div class="ann-slide" id="annSlide1">✦ CASH ON DELIVERY AVAILABLE NATIONWIDE ✦</div>
-  <div class="ann-slide" id="annSlide2">✦ BUY 1 GET 1 FREE — SHOP OUR CURRENT OFFERS ✦</div>
+  <div class="ann-slide" id="annSlide2">BUY 1 GET 1 FREE — SHOP OUR CURRENT OFFERS</div>
 </div>
 
 <div class="mob-ov" id="mobOv" onclick="closeMob()"></div>
@@ -335,18 +335,18 @@ footer{background:var(--bd);color:var(--cr);padding:55px 20px 0;}
       <div class="tree-tag" id="treeTaglineText">Your Skin, Your Story</div>
     </div>
     <div class="tree-links">
-      <button class="tree-btn featured" onclick="goPage('home')">🛍️ Shop Now — Skin Side</button>
-      <button class="tree-btn" id="treeInstaBtn">📸 Follow on Instagram</button>
-      <button class="tree-btn" id="treeTiktokBtn">🎵 Follow on TikTok</button>
-      <button class="tree-btn" onclick="goPage('offers')">🎁 Offers & Deals</button>
-      <button class="tree-btn" onclick="goPage('contact')">💬 Contact Us</button>
+      <button class="tree-btn featured" onclick="goPage('home')">Shop Now — Skin Side</button>
+      <button class="tree-btn" id="treeInstaBtn">Follow on Instagram</button>
+      <button class="tree-btn" id="treeTiktokBtn">Follow on TikTok</button>
+      <button class="tree-btn" onclick="goPage('offers')">Offers & Deals</button>
+      <button class="tree-btn" onclick="goPage('contact')"> Contact Us</button>
     </div>
     <div class="tree-soc">
       <a class="soc-btn" id="treeInstaIcon" href="https://instagram.com" target="_blank">📸</a>
       <a class="soc-btn" id="treeTiktokIcon" href="https://tiktok.com" target="_blank">🎵</a>
       <a class="soc-btn" id="treeWaIcon" href="https://wa.me" target="_blank">💬</a>
     </div>
-    <div class="tree-foot">© 2025 Skin Side · All rights reserved</div>
+    <div class="tree-foot">© 2026 Skin Side · All rights reserved</div>
   </div>
 </div>
 
@@ -559,13 +559,13 @@ footer{background:var(--bd);color:var(--cr);padding:55px 20px 0;}
       </div>
     </div>
     <div class="foot-col"><div class="foot-col-ttl">Shop</div><a onclick="showCat('all')">All Products</a><a onclick="goPage('offers')">Offers</a></div>
-    <div class="foot-col"><div class="foot-col-ttl">Help</div><a onclick="goPage('contact')">Contact Us</a><a onclick="goPage('about')">About</a><a>Shipping Info</a><a>Returns</a></div>
+    <div class="foot-col"><div class="foot-col-ttl">Help</div><a onclick="goPage('contact')">Contact Us</a><a onclick="goPage('about')">About</a></div>
     <div class="foot-col"><div class="foot-col-ttl">Follow</div><a id="footInstaIcon" href="https://instagram.com" target="_blank">Instagram</a><a id="footTiktokIcon" href="https://tiktok.com" target="_blank">TikTok</a><a id="footWaIcon" href="https://wa.me" target="_blank">WhatsApp</a></div>
   </div>
   <div class="foot-bot">
     <span class="foot-cod">💳 Cash on Delivery Available Nationwide</span>
-    <span class="foot-dev">Developed by @engy_mostafa</span>
-    <span class="foot-copy">© 2025 Skin Side · All rights reserved</span>
+    <span class="foot-dev">Developed by @engy_mostaffa  /  @webgy_ </span>
+    <span class="foot-copy">© 2026 Skin Side · All rights reserved</span>
   </div>
 </footer>
 
@@ -738,6 +738,7 @@ window._tgChat=TG_CHAT;
 window._fbAdd=addDoc;
 window._fbCol=collection;
 window._fbTS=serverTimestamp;
+window._goPage=window.goPage;
 </script>
 
 <script>
@@ -930,9 +931,10 @@ window.placeOrder=async function(){
   if(Notification.permission==='granted')new Notification('Skin Side — Order Confirmed! 🎉',{body:`Order ${ordId} placed! We'll contact you soon.`});
   window.cart=[];updateCart();
   document.getElementById('ordNum').textContent=`ORDER #${ordId}`;
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
- document.getElementById('page-orderconfirm').classList.add('active');
- window.scrollTo(0,0);
+  const _go=window._goPage||window.goPage;
+  if(_go)_go('orderconfirm');
+  else{document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById('page-orderconfirm').classList.add('active');}
+  window.scrollTo(0,0);
 };
 
 if(window.location.hash==='#links')goPage('treelink');
